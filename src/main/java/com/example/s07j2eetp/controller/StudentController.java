@@ -51,7 +51,7 @@ public class StudentController {
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         
         Student student = studentRepository.findById(id)
-        // problème avec les fleches ici 
+        // problème avec les fleches ici ( un espace en trop)
             .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         model.addAttribute("student", student);
         return "update-student";
@@ -74,7 +74,7 @@ public class StudentController {
     public String deleteStudent(@PathVariable("id") long id, Model model) {
    
         Student student = studentRepository.findById(id)
-         // problème avec les fleches ici 
+         // problème avec les fleches ici ( un espace en trop)
             .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         studentRepository.delete(student);
         model.addAttribute("students", studentRepository.findAll());
